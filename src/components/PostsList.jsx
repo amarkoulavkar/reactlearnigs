@@ -1,6 +1,7 @@
 import { useState } from "react";
 import NewPost from "./NewPost";
 import Post from "./Post";
+import Modal from "./Modal";
 
 function PostsList(){
     const [entredBody, setEnterendBody] = useState('');
@@ -13,7 +14,10 @@ function PostsList(){
     }
      return(
         <>
-            <NewPost onBodychange={onbodychangeEventHandler} onAuthorchange={onauthorchangeEventHandler}/>
+        <Modal>
+                <NewPost onBodychange={onbodychangeEventHandler} onAuthorchange={onauthorchangeEventHandler}/>
+        </Modal>
+            
              <ul>
                 <Post body={entredBody} author={entredAuthor}/>
              </ul>
